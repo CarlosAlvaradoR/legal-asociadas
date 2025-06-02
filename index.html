@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bufete Legal & Asociadas | Abogadas Especializadas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --azul-oscuro: #1a365d;
+            --azul-medio: #2c5282;
+            --azul-claro: #bee3f8;
+            --coral: #f88379;
+            --gris-claro: #f7fafc;
+            --gris-medio: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--azul-oscuro);
+        }
+
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--azul-oscuro) !important;
+            font-size: 1.8rem;
+        }
+
+        .nav-link {
+            color: var(--azul-oscuro) !important;
+            font-weight: 600;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--coral) !important;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--coral);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--azul-oscuro);
+            border-color: var(--azul-oscuro);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--azul-medio);
+            border-color: var(--azul-medio);
+        }
+
+        .btn-secondary {
+            background-color: var(--coral);
+            border-color: var(--coral);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e57373;
+            border-color: #e57373;
+            color: white;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--coral);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--coral);
+            margin-bottom: 20px;
+        }
+
+        .team-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--gris-medio);
+            margin: 0 auto 20px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--coral);
+            margin-right: 15px;
+        }
+
+        footer {
+            background-color: var(--azul-oscuro);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-links a {
+            color: var(--gris-medio);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--coral);
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--coral);
+        }
+
+        .bg-light-blue {
+            background-color: var(--gris-claro);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Legal & Asociadas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#equipo">Equipo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <a href="#contacto" class="btn btn-secondary ms-lg-3">Consulta Gratis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+        <div class="container">
+            <h1>Defendiendo sus derechos con excelencia</h1>
+            <p>En Legal & Asociadas brindamos soluciones legales personalizadas con un enfoque humano y profesional.
+                Nuestro equipo de abogadas especializadas está comprometido con su caso.</p>
+            <a href="#servicios" class="btn btn-primary me-2">Nuestros Servicios</a>
+            <a href="#contacto" class="btn btn-secondary">Contactar Ahora</a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="py-5" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios Legales</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4>Derecho Familiar</h4>
+                            <p>Divorcios, custodia de menores, pensión alimenticia, adopciones y más. Protegemos los
+                                intereses de su familia.</p>
+                            <a href="#" class="btn btn-outline-primary">Saber más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h4>Derecho Laboral</h4>
+                            <p>Despidos injustificados, acoso laboral, liquidaciones, contratos. Defendemos sus derechos
+                                como trabajador o empleador.</p>
+                            <a href="#" class="btn btn-outline-primary">Saber más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4>Derecho Inmobiliario</h4>
+                            <p>Compraventa de propiedades, contratos de arrendamiento, disputas de propiedad,
+                                regularización de terrenos.</p>
+                            <a href="#" class="btn btn-outline-primary">Saber más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-user-injured"></i>
+                            </div>
+                            <h4>Accidentes y Lesiones</h4>
+                            <p>Compensación por accidentes de tránsito, negligencia médica, lesiones laborales. Obtenga
+                                la indemnización que merece.</p>
+                            <a href="#" class="btn btn-outline-primary">Saber más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h4>Derecho Comercial</h4>
+                            <p>Constitución de empresas, contratos comerciales, fusiones y adquisiciones, asesoría
+                                corporativa continua.</p>
+                            <a href="#" class="btn btn-outline-primary">Saber más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <h4>Litigio Civil</h4>
+                            <p>Representación en juicios civiles, cobranza judicial, responsabilidad civil, cumplimiento
+                                de obligaciones.</p>
+                            <a href="#" class="btn btn-outline-primary">Saber más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotras -->
+    <section class="py-5 bg-light-blue">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title text-start">Nuestra Filosofía</h2>
+                    <p>En Legal & Asociadas creemos en un enfoque legal centrado en las personas. Nuestro bufete fue
+                        fundado con la convicción de que el derecho debe ser accesible, comprensible y efectivo para
+                        todos.</p>
+                    <p>Nos especializamos en brindar asesoría legal clara y soluciones prácticas, adaptadas a las
+                        necesidades específicas de cada cliente. Nuestro equipo de abogadas combina experiencia técnica
+                        con empatía y comprensión.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Más de 15 años de
+                            experiencia combinada</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Enfoque personalizado en
+                            cada caso</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Transparencia en costos y
+                            honorarios</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Compromiso con la
+                            excelencia legal</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Abogadas trabajando" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo -->
+    <section class="py-5" id="equipo">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="Dra. Ana Martínez" class="team-img">
+                        <h4>Dra. Ana Martínez</h4>
+                        <p class="text-muted">Socia Fundadora - Derecho Familiar</p>
+                        <p>Especialista en derecho de familia con más de 12 años de experiencia. Graduada con honores de
+                            la Universidad Nacional.</p>
+                        <div>
+                            <a href="#" class="text-decoration-none me-2"><i
+                                    class="fab fa-linkedin text-primary"></i></a>
+                            <a href="#" class="text-decoration-none"><i class="fas fa-envelope text-secondary"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80"
+                            alt="Dra. Laura Rodríguez" class="team-img">
+                        <h4>Dra. Laura Rodríguez</h4>
+                        <p class="text-muted">Socia - Derecho Laboral</p>
+                        <p>Experta en derecho laboral y protección al trabajador. Exasesora del Ministerio de Trabajo y
+                            columnista en revistas jurídicas.</p>
+                        <div>
+                            <a href="#" class="text-decoration-none me-2"><i
+                                    class="fab fa-linkedin text-primary"></i></a>
+                            <a href="#" class="text-decoration-none"><i class="fas fa-envelope text-secondary"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-card">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Dra. Sofía Vargas" class="team-img">
+                        <h4>Dra. Sofía Vargas</h4>
+                        <p class="text-muted">Asociada - Derecho Inmobiliario</p>
+                        <p>Especialista en transacciones inmobiliarias y derecho de propiedad. Certificada en mediación
+                            y resolución alternativa de conflictos.</p>
+                        <div>
+                            <a href="#" class="text-decoration-none me-2"><i
+                                    class="fab fa-linkedin text-primary"></i></a>
+                            <a href="#" class="text-decoration-none"><i class="fas fa-envelope text-secondary"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="py-5 bg-light-blue">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h3 class="display-4 text-primary">+250</h3>
+                    <p class="lead">Casos Resueltos</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h3 class="display-4 text-primary">15</h3>
+                    <p class="lead">Años de Experiencia</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h3 class="display-4 text-primary">98%</h3>
+                    <p class="lead">Satisfacción Clientes</p>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="display-4 text-primary">50+</h3>
+                    <p class="lead">Clientes Corporativos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-5" id="testimonios">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente 1"
+                                class="testimonial-img">
+                            <div>
+                                <h5>María González</h5>
+                                <p class="text-muted mb-0">Caso de Custodia</p>
+                            </div>
+                        </div>
+                        <p>"La Dra. Ana fue increíble durante todo mi proceso de divorcio. Me guió con paciencia y
+                            profesionalismo, logrando el mejor acuerdo posible para mis hijos. Recomiendo ampliamente
+                            sus servicios."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente 2"
+                                class="testimonial-img">
+                            <div>
+                                <h5>Carlos Méndez</h5>
+                                <p class="text-muted mb-0">Caso Laboral</p>
+                            </div>
+                        </div>
+                        <p>"Después de un despido injustificado, la Dra. Laura logró no solo mi indemnización completa,
+                            sino también el reconocimiento de derechos que desconocía. Su conocimiento y dedicación son
+                            excepcionales."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente 3"
+                                class="testimonial-img">
+                            <div>
+                                <h5>Patricia Ramírez</h5>
+                                <p class="text-muted mb-0">Compra de Propiedad</p>
+                            </div>
+                        </div>
+                        <p>"La asesoría de la Dra. Sofía fue fundamental para adquirir mi primera casa. Detectó
+                            irregularidades en los documentos que hubieran sido un problema grave. Ahora puedo estar
+                            tranquila con mi inversión."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="py-5 bg-light-blue" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctenos</h2>
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h4 class="mb-4">Información de Contacto</h4>
+                    <div class="contact-info">
+                        <div class="d-flex mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Dirección</h5>
+                                <p>Av. Principal 1234, Oficina 501<br>Distrito Legal, Ciudad</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Teléfono</h5>
+                                <p>+1 (555) 123-4567<br>Lunes a Viernes, 9am - 6pm</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>info@legaleasociadas.com<br>consultas@legaleasociadas.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h5>Síganos</h5>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Solicite una Consulta</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="nombre" class="form-label">Nombre Completo</label>
+                                        <input type="text" class="form-control" id="nombre" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="telefono" class="form-label">Teléfono</label>
+                                    <input type="tel" class="form-control" id="telefono">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="servicio" class="form-label">Servicio de Interés</label>
+                                    <select class="form-select" id="servicio">
+                                        <option selected disabled>Seleccione un servicio</option>
+                                        <option>Derecho Familiar</option>
+                                        <option>Derecho Laboral</option>
+                                        <option>Derecho Inmobiliario</option>
+                                        <option>Accidentes y Lesiones</option>
+                                        <option>Derecho Comercial</option>
+                                        <option>Litigio Civil</option>
+                                        <option>Otro</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="mensaje" class="form-label">Mensaje</label>
+                                    <textarea class="form-control" id="mensaje" rows="4"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="text-white mb-4">Legal & Asociadas</h4>
+                    <p>Bufete de abogadas especializadas comprometidas con la excelencia legal y la satisfacción de
+                        nuestros clientes.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Servicios</h5>
+                    <div class="footer-links">
+                        <a href="#">Derecho Familiar</a>
+                        <a href="#">Derecho Laboral</a>
+                        <a href="#">Derecho Inmobiliario</a>
+                        <a href="#">Accidentes y Lesiones</a>
+                        <a href="#">Derecho Comercial</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-4">Enlaces</h5>
+                    <div class="footer-links">
+                        <a href="#inicio">Inicio</a>
+                        <a href="#servicios">Servicios</a>
+                        <a href="#equipo">Equipo</a>
+                        <a href="#testimonios">Testimonios</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-4">Horario de Atención</h5>
+                    <p>Lunes a Viernes: 9:00 am - 6:00 pm</p>
+                    <p>Sábados: 10:00 am - 2:00 pm (solo con cita)</p>
+                    <p>Domingos: Cerrado</p>
+                    <div class="mt-3">
+                        <a href="#contacto" class="btn btn-outline-light">Agendar Cita</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Legal & Asociadas. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-decoration-none me-3" style="color: var(--gris-medio);">Política de
+                        Privacidad</a>
+                    <a href="#" class="text-decoration-none" style="color: var(--gris-medio);">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
