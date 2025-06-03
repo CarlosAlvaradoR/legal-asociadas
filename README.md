@@ -14,7 +14,7 @@ Una breve descripción de tu proyecto y su propósito.
 
 ## 🖼️ Capturas de Pantalla
 
-| ![Captura 1](assets/inicio.png) | ![Captura 2](assets/servicios.png) |
+| ![Captura 1](/assets/inicio.png) | ![Captura 2](/assets/servicios.png) |
 |-------------------------------|-------------------------------|
 | Descripción imagen 1          | Descripción imagen 2          |
 
