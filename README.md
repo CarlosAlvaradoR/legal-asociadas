@@ -22,4 +22,4 @@ Una breve descripción de tu proyecto y su propósito.
 
 1. Clona el repositorio
 
-    git clone https://github.com/tu-usuario/tu-repo.git
+git clone https://github.com/tu-usuario/tu-repo.git
